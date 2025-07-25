@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS Variables for Themes */
+:root {
+  /* Light Theme */
+  --background: #ffffff;
+  --surface: #f8fafc;
+  --surface-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --accent: #f97316;
+}
+
+.theme-dark {
+  --background: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #334155;
+  --border: #475569;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --primary: #60a5fa;
+  --primary-hover: #3b82f6;
+  --accent: #fb923c;
+}
+
+.theme-cyberpunk {
+  --background: #0a0a0a;
+  --surface: #1a0a1a;
+  --surface-hover: #2a1a2a;
+  --border: #ff00ff;
+  --text-primary: #00ffff;
+  --text-secondary: #ff00ff;
+  --primary: #ff0080;
+  --primary-hover: #ff0060;
+  --accent: #00ff00;
+}
+
+.theme-pastel {
+  --background: #fef7f0;
+  --surface: #fff5f5;
+  --surface-hover: #fed7e2;
+  --border: #fbb6ce;
+  --text-primary: #744210;
+  --text-secondary: #a0aec0;
+  --primary: #ed64a6;
+  --primary-hover: #d53f8c;
+  --accent: #9f7aea;
+}
+
+.theme-ocean {
+  --background: #0c4a6e;
+  --surface: #075985;
+  --surface-hover: #0369a1;
+  --border: #0ea5e9;
+  --text-primary: #e0f2fe;
+  --text-secondary: #7dd3fc;
+  --primary: #0ea5e9;
+  --primary-hover: #0284c7;
+  --accent: #06b6d4;
+}
+
+/* Apply CSS Variables */
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Custom Utility Classes */
+.bg-background { background-color: var(--background); }
+.bg-surface { background-color: var(--surface); }
+.bg-surface-hover { background-color: var(--surface-hover); }
+.bg-primary { background-color: var(--primary); }
+.bg-primary-hover { background-color: var(--primary-hover); }
+.bg-accent { background-color: var(--accent); }
+
+.text-text-primary { color: var(--text-primary); }
+.text-text-secondary { color: var(--text-secondary); }
+.text-primary { color: var(--primary); }
+.text-accent { color: var(--accent); }
+
+.border-border { border-color: var(--border); }
+.border-primary { border-color: var(--primary); }
+
+.hover\:bg-primary-hover:hover { background-color: var(--primary-hover); }
+.hover\:bg-surface-hover:hover { background-color: var(--surface-hover); }
+.hover\:text-primary:hover { color: var(--primary); }
+.hover\:text-text-primary:hover { color: var(--text-primary); }
+
+/* Custom Animations */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-hover);
+}
+
+/* Focus States */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Responsive Typography */
+@media (max-width: 640px) {
+  .text-4xl { font-size: 2.25rem; }
+  .text-5xl { font-size: 3rem; }
+  .text-6xl { font-size: 3.75rem; }
+}
+
+/* Theme Transition */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Loading States */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(45deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Animations */
+.btn-scale {
+  transition: transform 0.2s ease;
+}
+
+.btn-scale:hover {
+  transform: scale(1.05);
+}
+
+.btn-scale:active {
+  transform: scale(0.95);
+}
+
+
+.fill-animation{
+  animation: fillBar 1000ms ease-in-out forwards;
+}
+
+@keyframes fillBar {
+  from{
+    width: 0%;
+  }
+  to{
+    width: var(--skill-width);
+  }
+}
