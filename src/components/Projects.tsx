@@ -29,11 +29,11 @@ const Projects: React.FC = () => {
     },
     {
       id: 2,
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      technologies: ['React', 'Redux', 'Socket.io', 'Node.js', 'PostgreSQL'],
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600',
-      demoUrl: '#',
+      title: 'Expense Management App',
+      description: 'A collaborative expense management application with real-time updates.',
+      technologies: ['HTML', 'CSS', 'Vanilla JS', 'Node.js', 'Sequelize', 'MySQL'],
+      image: '/Expense Tracker Ss.png',
+      demoUrl: 'https://expense-tracker-full-fledged-web-ap.vercel.app/',
       githubUrl: '#',
       featured: true
     },
